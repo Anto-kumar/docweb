@@ -10,6 +10,7 @@ use App\Models\Appointment;
 
 class AdminController extends Controller
 {
+    
     public function profilepage()
     {
         return view('profile');
