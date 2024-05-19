@@ -10,7 +10,7 @@ use App\Models\Appointment;
 
 class AdminController extends Controller
 {
-    
+
     public function profilepage()
     {
         return view('profile');
@@ -63,6 +63,9 @@ class AdminController extends Controller
         $data = Appointment::find($id);
         $data->status = 'Cancelled';
          $data->save();
+
+        $user = User::find($data->user_id);
+        $user->notify(new AppointmentCancelled($data));
         return redirect()->back()->with('message', 'Appointment Cancelled Successfully');
     }
 
@@ -71,6 +74,11 @@ class AdminController extends Controller
         $data = Appointment::find($id);
         $data->status = 'Approved';
         $data->save();
+
+
+        $user = User::find($data->user_id);
+        $user->notify(new AppointmentApproved($data));
+
         return redirect()->back()->with('message', 'Appointment Approved Successfully');
 
 

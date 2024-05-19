@@ -37,6 +37,14 @@ class UserController extends Controller
 
         $data->save();
 
+        // Get the admin user
+        $admin = User::where('type', 1)->first();
+
+        // Send notification to admin
+        $admin->notify(new AppointmentRequest($data));
+
+
+
         return redirect()->back()->with('message', 'Appointment Request Sent Successfully');
         
     }

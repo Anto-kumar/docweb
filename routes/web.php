@@ -47,6 +47,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/myappointment', [UserController::class, 'myappointment'])->name('myappointment');
     Route::get('/profile', [UserController::class, 'userprofile'])->name('profile');
     Route::get('/cancel_appoint/{id}', [UserController::class, 'cancel_appoint'])->name('cancel_appoint');
+    Route::get('/notifications/usernotification', [NotificationController::class, 'usernotification'])->name('/notifications/usernotification');
+    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications.markAsRead');
+    
 });
  
 //Admin Routes List
@@ -74,6 +77,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::post('/admin/edit_doctor/{id}', [AdminController::class,'edit_doctor'])->name('admin/edit_doctor');
 
     Route::get('/admin/delete_doctor/{id}', [AdminController::class,'delete_doctor'])->name('admin/delete_doctor');
+
+    Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('/notifications/adminnotification');
+
+    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications.markAsRead');
 
 
 });

@@ -56,7 +56,7 @@
             <h1 class="header">Add Doctor Form</h1>
             <div class="container">
        
-        <form action="{{url('admin/upload_doctor')}}" method="POST" enctype="multipart\form-data">
+        <form action="{{url('admin/upload_doctor')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Doctor Name:</label>
@@ -64,7 +64,7 @@
             </div>
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]" required>
             </div>
             <div class="form-group">
                 <label for="speciality">Speciality:</label>
