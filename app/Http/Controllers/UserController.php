@@ -80,4 +80,9 @@ class UserController extends Controller
     {
         return view('layouts.makeappointment',['doctor' => Doctor::all()]);
     }
+
+    public function doctor()
+    {
+        return view('layouts.alldoctor',['doctor' => Doctor::all()]);
+    }
 }

@@ -45,6 +45,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/makeappointment', [UserController::class, 'appointmentForm'])->name('makeappointment');
+    Route::get('/doctor', [UserController::class, 'doctor'])->name('doctor');
     Route::get('/myappointment', [UserController::class, 'myappointment'])->name('myappointment');
     Route::get('/profile', [UserController::class, 'userprofile'])->name('profile');
     Route::get('/cancel_appoint/{id}', [UserController::class, 'cancel_appoint'])->name('cancel_appoint');
@@ -68,7 +69,6 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/admin/showall_doctor_view', [AdminController::class, 'alldoctorview'])->name('admin/showall_doctor_view');
 
-
    Route::get('/admin/cancel_appoint/{id}', [AdminController::class, 'cancel_appoint'])->name('admin/cancel_appoint');
 
     Route::get('/admin/approve_appoint/{id}', [AdminController::class,'approve_appoint'])->name('admin/approve_appoint');
@@ -82,6 +82,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('notifications/adminnotification');
 
     Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
+
+
 
 
 });

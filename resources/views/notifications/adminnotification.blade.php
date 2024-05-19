@@ -17,7 +17,7 @@
                     <li style="background-color: #fff; padding: 10px; margin-bottom: 10px;">
                         <span style="color: #333;">{{ $notification->data['message'] }} - {{ $notification->created_at->diffForHumans() }}</span>
                         @if (is_null($notification->read_at))
-                            <a href="{{ route('notifications.markAsRead', $notification->id) }}" style="color: #007bff; text-decoration: underline;">Mark as read</a>
+                            <a href="{{ route('notifications/markAsRead', $notification->id) }}" style="color: #007bff; text-decoration: underline;">Mark as read</a>
                         @endif
                     </li>
                 @endforeach
