@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\User;
+use App\Models\Appointment;
 
  
 class HomeController extends Controller
@@ -22,6 +24,10 @@ class HomeController extends Controller
  
     public function adminHome()
     {
-        return view('dashboard');
+
+        $users = User::all();
+        $doctors = Doctor::all();
+        $appointments = Appointment::all();
+        return view('admin.dashboard', compact('users', 'doctors', 'appointments'));
     }
 }
