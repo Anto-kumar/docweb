@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForgetpasswordController;
+use App\Http\Controllers\NotificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,8 +48,8 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/myappointment', [UserController::class, 'myappointment'])->name('myappointment');
     Route::get('/profile', [UserController::class, 'userprofile'])->name('profile');
     Route::get('/cancel_appoint/{id}', [UserController::class, 'cancel_appoint'])->name('cancel_appoint');
-    Route::get('/notifications/usernotification', [NotificationController::class, 'usernotification'])->name('/notifications/usernotification');
-    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications.markAsRead');
+    Route::get('/notifications/usernotification', [NotificationController::class, 'usernotification'])->name('notifications/usernotification');
+    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
     
 });
  
@@ -78,9 +79,9 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/admin/delete_doctor/{id}', [AdminController::class,'delete_doctor'])->name('admin/delete_doctor');
 
-    Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('/notifications/adminnotification');
+    Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('notifications/adminnotification');
 
-    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications.markAsRead');
+    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
 
 
 });

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory, Notifiable;
  
     /**
      * The attributes that are mass assignable.

@@ -38,6 +38,7 @@
                                 <a href="{{ url('/') }}" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                                 <a href="{{ route('about') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About Us</a>
                                 <a href="{{url('makeappointment')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Appointment</a>
+                                <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Doctors</a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +48,7 @@
                             @auth
 
                             <a href="{{url('myappointment')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" style ="background-color:green;margin-right:20px"><b> My Appointment </b></a>
-
+                            <a href="{{ route('notifications/usernotification') }}">
                             <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                 <span class="sr-only">View notifications</span>
                                 <!-- Heroicon name: outline/bell -->
@@ -55,6 +56,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                                 </svg>
                             </button>
+                            </a>
                             <!-- Profile dropdown -->
                             <div x-data="{show: false}" x-on:click.away="show = false" class="ml-3 relative">
                                 <div>
