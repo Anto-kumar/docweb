@@ -57,6 +57,7 @@
             <div class="container">
        
             <form action="{{url('admin/edit_doctor',$data->id)}}" method="post" enctype="multipart/form-data">
+                
             @csrf
             <div class="form-group">
                 <label for="name">Doctor Name:</label>
@@ -83,7 +84,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Old Image:</label>
-                <img src="{{asset('images')}}/{{$data->image}}" style="width: 100px; height: 100px; border-radius: 50%;">
+                <img src="/doctorimage/{{$data->image}}" style="width: 100px; height: 100px; border-radius: 50%;">
             </div>
             <div class="form-group">
                 <label for="image">Change Image:</label>

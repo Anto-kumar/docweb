@@ -50,10 +50,7 @@ class UserController extends Controller
         if(Auth::id()){
 
             $userid = Auth::user()->id;
-
             $appoint = Appointment::where('user_id', $userid)->get();
-
-
             return view('my_appointment', compact('appoint'));
         }
 

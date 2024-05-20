@@ -8,7 +8,7 @@
           <div class="card-blog">
             <div class="header">
               <a href="{{$item->link}}" class="post-thumb">
-                <img src="{{ asset('storage/images/')  }}" alt="">
+                <img src="/newsimage/{{$item->image}}" alt="">
               </a>
             </div>
             <div class="body">

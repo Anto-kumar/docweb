@@ -27,52 +27,54 @@ class AdminController extends Controller
     public function alldoctorview()
     {
         $data = doctor::all();
+        //dd($data);
         return view('admin.showall_doctor',compact('data'));
 
     }
 
-//     public function upload(Request $request)
-//    {
-//         $doctor = new doctor;
-
-//     if ($request->hasFile('image')) {
-//         $image = $request->file('image');
-        
-//         $imageName = time() . '.' . $image->getClientOriginalExtension();
-        
-//         $image->move('doctorimage', $imageName);
-        
-//         $doctor->image = $imageName;
-//     }
-
-//     $doctor->name = $request->name;
-//     $doctor->phone = $request->phone;
-//     $doctor->room = $request->room;
-//     $doctor->speciality = $request->speciality;
-
-
-//     $doctor->save();
-//     return redirect()->back()->with('message', 'Doctor Added Successfully');
-//   }
-
-public function upload(Request $request)
-{
-    $formFields = $request->validate([
-        'name' => 'required',
-        'phone' => 'required',
-        'speciality' => 'required',
-        'room' => 'required',
-        'image' => 'nullable|image' 
-    ]);
+    public function upload(Request $request)
+   {
+        $doctor = new doctor;
 
     if ($request->hasFile('image')) {
-        $formFields['image'] = $request->file('image')->store('images', 'public');
+        $image = $request->file('image');
+        
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        
+        $image->move('doctorimage', $imageName);
+        
+        $doctor->image = $imageName;
     }
 
-    Doctor::create($formFields);
+    $doctor->name = $request->name;
+    $doctor->phone = $request->phone;
+    $doctor->room = $request->room;
+    $doctor->speciality = $request->speciality;
 
+
+    $doctor->save();
     return redirect()->back()->with('message', 'Doctor Added Successfully');
-}
+  }
+
+// public function upload(Request $request)
+// {
+//     $formFields = $request->validate([
+//         'name' => 'required',
+//         'phone' => 'required',
+//         'speciality' => 'required',
+//         'room' => 'required',
+//         'image' => 'nullable|image' 
+//     ]);
+
+//     if ($request->hasFile('image')) {
+//         $formFields['image'] = $request->file('image')->store('images', 'public');
+//     }
+    
+
+//     Doctor::create($formFields);
+
+//     return redirect()->back()->with('message', 'Doctor Added Successfully');
+// }
 
     public function showappointment()
     {
@@ -138,8 +140,7 @@ public function upload(Request $request)
             
             $doctor->image = $imageName;
 
-            }
-            
+            }    
             
         }
 

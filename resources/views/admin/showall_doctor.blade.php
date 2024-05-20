@@ -21,7 +21,7 @@
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$doctor->phone}}</td>
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$doctor->speciality}}</td>
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$doctor->room}}</td>
-            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><img src="{{asset('images')}}/{{$doctor->image}}" style="width: 100px; height: 100px; border-radius: 50%;"></td>
+            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><img src="/doctorimage/{{$doctor->image}}" style="width: 100px; height: 100px; border-radius: 50%;"></td>
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-success" href="{{url('admin/update_doctor',$doctor->id)}}">Update</a></td>
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-danger" onclick="return confirm('Are you sure to delete the doctor from website database')" href="{{url('admin/delete_doctor',$doctor->id)}}">Delete</a></td> 
 
