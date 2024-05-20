@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\User;
 use App\Models\Appointment;
+use App\Models\latestnews;
 
  
 class HomeController extends Controller
@@ -18,7 +19,8 @@ class HomeController extends Controller
     public function index()
     {
         $doctor = doctor::all();
-        return view('home', compact('doctor'));
+        $news = latestnews::all();
+        return view('home', compact('doctor', 'news'));
         //return view('home');
     }
  

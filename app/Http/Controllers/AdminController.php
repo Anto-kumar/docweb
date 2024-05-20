@@ -9,6 +9,7 @@ use App\Models\Doctor;
 use App\Models\Appointment;
 use App\Notifications\AppointmentApproved;
 use App\Notifications\AppointmentCancelled;
+use App\Models\latestnews;
 
 class AdminController extends Controller
 {
@@ -156,7 +157,5 @@ public function upload(Request $request)
         $data->delete();
         return redirect()->back()->with('message', 'Appointment Deleted Successfully');
     }
-
-
 
 }

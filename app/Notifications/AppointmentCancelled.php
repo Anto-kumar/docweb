@@ -45,7 +45,7 @@ class AppointmentCancelled extends Notification
     {
         return [
             'appointment_id' => $this->appointment->id,
-            'message' => 'Dear '.$this->appointment->name .', Your appointment id is '. $this->appointment->id . 'has been cancelled.'.' Please contact us for further information. Thank you.',
+            'message' => 'Dear '.$this->appointment->name .', Your appointment id is '. $this->appointment->id . ' has been cancelled. Please contact us for further information. Thank you.',
         ];
     }
 }

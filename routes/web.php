@@ -8,6 +8,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ForgetpasswordController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\LatestnewsController;
+use App\Models\Doctor;
+use App\Models\latestnews;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +23,7 @@ use App\Http\Controllers\NotificationController;
 */
  
 Route::get('/', function () {
-    return view('home', ['doctor' => App\Models\Doctor::all()]);
+    return view('home', ['doctor' =>Doctor::all(), 'news' => latestnews::all()]);
 })->name('home');
 
 // Route::get('/forgetpassword',[ForgetpasswordController::class, 'forgetpassword'])->name('forgetpassword');
@@ -64,26 +67,25 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/admin/delete_appoint/{id}', [AdminController::class, 'delete_appoint'])->name('admin/delete_appoint');
     
     Route::post('/admin/upload_doctor', [AdminController::class, 'upload'])->name('admin/upload_doctor');
-
-    
     Route::get('/admin/add_doctor_view', [AdminController::class, 'addview'])->name('admin/add_doctor_view');
-    
-
     Route::get('/admin/showall_doctor_view', [AdminController::class, 'alldoctorview'])->name('admin/showall_doctor_view');
-
-   Route::get('/admin/cancel_appoint/{id}', [AdminController::class, 'cancel_appoint'])->name('admin/cancel_appoint');
-
-    Route::get('/admin/approve_appoint/{id}', [AdminController::class,'approve_appoint'])->name('admin/approve_appoint');
-
     Route::get('/admin/update_doctor/{id}', [AdminController::class,'update_doctor'])->name('admin/update_doctor');
-
     Route::post('/admin/edit_doctor/{id}', [AdminController::class,'edit_doctor'])->name('admin/edit_doctor');
-
     Route::get('/admin/delete_doctor/{id}', [AdminController::class,'delete_doctor'])->name('admin/delete_doctor');
 
-    Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('notifications/adminnotification');
+    Route::post('/admin/update_news', [LatestnewsController::class, 'updatenews'])->name('admin/update_news');
+    Route::get('/admin/latestnews', [LatestnewsController::class, 'latestnews'])->name('admin/latestnews');
+    Route::get('/admin/delete_news/{id}', [LatestnewsController::class, 'deletenews'])->name('admin/delete_news');
 
+    
+    Route::get('/admin/cancel_appoint/{id}', [AdminController::class, 'cancel_appoint'])->name('admin/cancel_appoint');
+    Route::get('/admin/approve_appoint/{id}', [AdminController::class,'approve_appoint'])->name('admin/approve_appoint');
+
+    
+    Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('notifications/adminnotification');
     Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
+
+    
 
 
 
