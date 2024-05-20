@@ -28,29 +28,48 @@ class AdminController extends Controller
 
     }
 
-    public function upload(Request $request)
-   {
-        $doctor = new doctor;
+//     public function upload(Request $request)
+//    {
+//         $doctor = new doctor;
+
+//     if ($request->hasFile('image')) {
+//         $image = $request->file('image');
+        
+//         $imageName = time() . '.' . $image->getClientOriginalExtension();
+        
+//         $image->move('doctorimage', $imageName);
+        
+//         $doctor->image = $imageName;
+//     }
+
+//     $doctor->name = $request->name;
+//     $doctor->phone = $request->phone;
+//     $doctor->room = $request->room;
+//     $doctor->speciality = $request->speciality;
+
+
+//     $doctor->save();
+//     return redirect()->back()->with('message', 'Doctor Added Successfully');
+//   }
+
+public function upload(Request $request)
+{
+    $formFields = $request->validate([
+        'name' => 'required',
+        'phone' => 'required',
+        'speciality' => 'required',
+        'room' => 'required',
+        'image' => 'nullable|image' 
+    ]);
 
     if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
-        
-        $image->move('doctorimage', $imageName);
-        
-        $doctor->image = $imageName;
+        $formFields['image'] = $request->file('image')->store('images', 'public');
     }
 
-    $doctor->name = $request->name;
-    $doctor->phone = $request->phone;
-    $doctor->room = $request->room;
-    $doctor->speciality = $request->speciality;
+    Doctor::create($formFields);
 
-
-    $doctor->save();
     return redirect()->back()->with('message', 'Doctor Added Successfully');
-  }
+}
 
     public function showappointment()
     {
@@ -126,6 +145,13 @@ class AdminController extends Controller
         $doctor->speciality = $request->speciality;
         $doctor->save();
         return redirect()->back()->with('message', 'Doctor Updated Successfully');
+    }
+
+    public function delete_appoint($id)
+    {
+        $data = Appointment::find($id);
+        $data->delete();
+        return redirect()->back()->with('message', 'Appointment Deleted Successfully');
     }
 
 

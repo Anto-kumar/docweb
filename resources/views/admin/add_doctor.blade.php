@@ -64,7 +64,7 @@
             </div>
             <div class="form-group">
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" required>
             </div>
             <div class="form-group">
                 <label for="speciality">Speciality:</label>
@@ -83,7 +83,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Doctor Image:</label>
-                <input type="file" id="image" name="file" required>
+                <input type="file" id="image" name="image" required>
             </div>
             <input type="submit" value="Submit" class="btn">
         </form>

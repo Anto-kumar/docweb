@@ -13,6 +13,7 @@
             <th style="border: 2px solid black; padding: 8px; background-color: #333; color: white;">Appointment Status</th>
             <th style="border: 2px solid black; padding: 8px; background-color: #333; color: white;">Approved</th>
             <th style="border: 2px solid black; padding: 8px; background-color: #333; color: white;">Cancel</th>
+            <th style="border: 2px solid black; padding: 8px; background-color: #333; color: white;">Delete</th>
 
 
 
@@ -28,8 +29,9 @@
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$appoint->date}}</td>
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$appoint->message}}</td>
             <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$appoint->status}}</td>
-            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-success" href="{{url('admin/approve_appoint',$appoint->id)}}">Approve</a></td>
-            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-danger" onclick="return confirm('Are you sure to cancel Appointment')" href="{{url('admin/cancel_appoint',$appoint->id)}}">Cancel</a></td> 
+            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-success" style="background-color: green;" href="{{url('admin/approve_appoint',$appoint->id)}}">Approve</a></td>
+            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-warning" onclick="return confirm('Are you sure to cancel Appointment')" href="{{url('admin/cancel_appoint',$appoint->id)}}">Cancel</a></td>
+            <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-danger" onclick="return confirm('Are you sure to delete the Appointment from website database')" href="{{url('admin/delete_appoint',$appoint->id)}}">Delete</a></td>
 
         </tr>
         @endforeach

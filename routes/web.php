@@ -60,6 +60,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
  
     Route::get('/admin/profile', [AdminController::class, 'profilepage'])->name('admin/profile');
     Route::get('/admin/appointment', [AdminController::class, 'showappointment'])->name('admin/appointment');
+    Route::get('/admin/delete_appoint/{id}', [AdminController::class, 'delete_appoint'])->name('admin/delete_appoint');
     
     Route::post('/admin/upload_doctor', [AdminController::class, 'upload'])->name('admin/upload_doctor');
 
