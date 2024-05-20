@@ -22,11 +22,12 @@
     <link rel="stylesheet" href="../assets/css/theme.css">
 
 
+
 </head>
  
 <body>
     <div>
-        <nav class="bg-gray-800">
+        <nav class="bg-gray-800 nontunav">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
@@ -96,6 +97,7 @@
                 </div>
             </div>
         </nav>
+        <div class="dummyNontu"></div>
         <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 <div>@yield('contents')</div>

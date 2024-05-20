@@ -10,6 +10,7 @@ use App\Models\Appointment;
 use App\Notifications\AppointmentApproved;
 use App\Notifications\AppointmentCancelled;
 use App\Models\latestnews;
+use App\Models\Notification;
 
 class AdminController extends Controller
 {

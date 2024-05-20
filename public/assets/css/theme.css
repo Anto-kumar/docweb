@@ -1837,3 +1837,15 @@ a.text-dark:hover, a.text-dark:focus {
 .nontu{
   z-index: 12121;
 }
+.nontunav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 12121;
+}
+.dummyNontu{
+  height: 100px;
+  width:1px;
+  
+}

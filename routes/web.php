@@ -54,9 +54,10 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/cancel_appoint/{id}', [UserController::class, 'cancel_appoint'])->name('cancel_appoint');
     Route::get('/appointment', [UserController::class, 'appointment'])->name('appointment');
     Route::get('/notifications/usernotification', [NotificationController::class, 'usernotification'])->name('notifications/usernotification');
-    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
-    
+   
 });
+
+Route::get('/notifications/markasread/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
  
 //Admin Routes List
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
@@ -83,11 +84,5 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     
     Route::get('/notifications/adminnotification', [NotificationController::class, 'adminnotification'])->name('notifications/adminnotification');
-    Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
-
-    
-
-
-
 
 });

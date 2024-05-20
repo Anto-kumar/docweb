@@ -61,12 +61,14 @@ class LatestnewsController extends Controller
     {
         $news = latestnews::find($id);
 
-      if ($news) {
+       if ($news) {
           $news->delete();
-       }
+         }
 
-        
-        return view('admin.latestnews');
+        $news = latestnews::all();
+        return view('admin.latestnews',compact('news'));
+
+
     }
 
 }

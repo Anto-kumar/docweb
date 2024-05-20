@@ -24,7 +24,6 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
-@if(isset($news))
     <br>
     <hr>
     <h2 style="color: #FF0000;"><u>All News :</u></h2>
@@ -44,7 +43,7 @@
                 <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{ $item->title }}</td>
                 <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$item->description}}</td>
                 <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;">{{$item->link}}</td>
-                <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><img src="" style="width: 100px; height: 100px; border-radius: 50%;"></td>
+                <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><img src="/newsimage/{{$item->image}}" style="width: 100px; height: 100px; border-radius: 50%;"></td>
                 <td style="border: 1px solid black; padding: 8px; background-color: #f9f9f9;"><a class="btn btn-danger" onclick="return confirm('Are you sure to delete the doctor from website database')" href="{{url('admin/delete_news',$item->id)}}">Delete</a></td> 
 
             </tr>
@@ -52,6 +51,5 @@
 
         </table>
     </div>
-@endif
 <div style="height: 100px;"></div>
 @endsection
