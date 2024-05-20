@@ -49,6 +49,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/myappointment', [UserController::class, 'myappointment'])->name('myappointment');
     Route::get('/profile', [UserController::class, 'userprofile'])->name('profile');
     Route::get('/cancel_appoint/{id}', [UserController::class, 'cancel_appoint'])->name('cancel_appoint');
+    Route::get('/appointment', [UserController::class, 'appointment'])->name('appointment');
     Route::get('/notifications/usernotification', [NotificationController::class, 'usernotification'])->name('notifications/usernotification');
     Route::get('/notifications/mark-as-read/{id}', [NotificationController::class, 'markAsRead'])->name('notifications/markAsRead');
     

@@ -46,7 +46,7 @@ class AppointmentRequest extends Notification
     {
         return [
             'appointment_id' => $this->appointment->id,
-            'message' => 'User Request a  appointment',
+            'message' => 'A new appointment has been requested. Please check the appointment list for more details .',
         ];
     }
 }

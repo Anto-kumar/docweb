@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Appointment;
 use App\Models\Doctor;
+use App\Notifications\AppointmentRequest;
  
 class UserController extends Controller
 {
@@ -37,13 +38,8 @@ class UserController extends Controller
 
         $data->save();
 
-        // Get the admin user
         $admin = User::where('type', 1)->first();
-
-        // Send notification to admin
         $admin->notify(new AppointmentRequest($data));
-
-
 
         return redirect()->back()->with('message', 'Appointment Request Sent Successfully');
         

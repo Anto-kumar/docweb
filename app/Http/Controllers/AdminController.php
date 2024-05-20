@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Notifications\AppointmentApproved;
+use App\Notifications\AppointmentCancelled;
 
 class AdminController extends Controller
 {
@@ -85,6 +87,7 @@ public function upload(Request $request)
 
         $user = User::find($data->user_id);
         $user->notify(new AppointmentCancelled($data));
+        
         return redirect()->back()->with('message', 'Appointment Cancelled Successfully');
     }
 
