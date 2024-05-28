@@ -74,7 +74,20 @@
                     <option value="cardiology">Cardiology</option>
                     <option value="dental">Dental</option>
                     <option value="neurology">Neurology</option>
-                    <option value="orthopaedics">Orthopaedics</option>    
+                    <option value="orthopaedics">Orthopaedics</option>
+                    <option value="paediatrics">Paediatrics</option>
+                    <option value="physiotherapy">Physiotherapy</option>
+                    <option value="psychiatry">Psychiatry</option>
+                    <option value="urology">Urology</option>
+                    <option value="gynaecology">Gynaecology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="ophthalmology">Ophthalmology</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="radiology">Radiology</option>
+                    <option value="pathology">Pathology</option>
+                    <option value="emergency">Emergency</option>
+                    <option value="all">All</option>
+                    <
                 </select>
             </div>
             <div class="form-group">
