@@ -53,6 +53,16 @@
         }
     </style>
             <div>
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    <script>
+                        setTimeout(function(){
+                            document.querySelector('.alert').remove();
+                        }, 3000);
+                    </script>
+                @endif
             <h1 class="header">Add Doctor Form</h1>
             <div class="container">
        

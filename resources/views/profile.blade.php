@@ -4,21 +4,21 @@
  
 @section('contents')
 <hr />
-<form method="POST" enctype="multipart/form-data" action="">
-    <div>
-        <label class="label">
+<div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded shadow">
+        <h1 class="text-2xl font-bold mb-4">Profile</h1>
+        <div class="mb-4">
+            <label class="label">
             <span class="text-base label-text">Name</span>
-        </label>
-        <input name="name" type="text" value="{{ auth()->user()->name }}" class="w-full input input-bordered" />
-    </div>
-    <div>
-        <label class="label">
+            </label>
+            <input name="name" type="text" value="{{ auth()->user()->name }}" class="w-full input input-bordered" style="color: blue; font-weight: bold;" />
+        </div>
+        <div class="mb-4">
+            <label class="label">
             <span class="text-base label-text">Email</span>
-        </label>
-        <input name="email" type="text" value="{{ auth()->user()->email }}" class="w-full input input-bordered" />
+            </label>
+            <input name="email" type="text" value="{{ auth()->user()->email }}" class="w-full input input-bordered" style="color: red; font-style: italic;" />
+        </div>
     </div>
-    <div class="mt-6">
-        <button type="submit" class="btn btn-block">Save Profile</button>
-    </div>
-</form>
+</div>
 @endsection

@@ -52,30 +52,10 @@ class AdminController extends Controller
     $doctor->room = $request->room;
     $doctor->speciality = $request->speciality;
 
-
     $doctor->save();
     return redirect()->back()->with('message', 'Doctor Added Successfully');
   }
 
-// public function upload(Request $request)
-// {
-//     $formFields = $request->validate([
-//         'name' => 'required',
-//         'phone' => 'required',
-//         'speciality' => 'required',
-//         'room' => 'required',
-//         'image' => 'nullable|image' 
-//     ]);
-
-//     if ($request->hasFile('image')) {
-//         $formFields['image'] = $request->file('image')->store('images', 'public');
-//     }
-    
-
-//     Doctor::create($formFields);
-
-//     return redirect()->back()->with('message', 'Doctor Added Successfully');
-// }
 
     public function showappointment()
     {

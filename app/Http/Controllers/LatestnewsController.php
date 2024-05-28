@@ -7,25 +7,6 @@ use App\Models\Latestnews;
 
 class LatestnewsController extends Controller
 {
-    // public function updatenews(Request $request)
-    // {
-    //     $formFields = $request->validate([
-    //         'title' => 'required',
-    //         'description' => 'required',
-    //         'link' => 'required',
-    //         'image' => 'nullable|image' 
-    //     ]);
-
-    //     if ($request->hasFile('image')) {
-    //         $formFields['image'] = $request->file('image')->store('images', 'public');
-    //     }
-
-    //     Latestnews::create($formFields);
-
-    //     $news = latestnews::all();
-
-    //     return view('admin.latestnews',compact('news'));
-    // }
 
     public function updatenews(Request $request)
     {
@@ -54,7 +35,8 @@ class LatestnewsController extends Controller
 
     public function latestnews()
     {
-        return view('admin.latestnews');
+        $news = latestnews::all();
+        return view('admin.latestnews',compact('news'));
     }
 
     public function deletenews($id)

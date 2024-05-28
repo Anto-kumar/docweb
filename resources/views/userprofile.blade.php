@@ -10,22 +10,21 @@
         </h1>
     </div>
 </header>
+<div class="bg-white shadow p-6">
+    <div class="bg-white shadow p-6">
+        <div class="mt-4">
+            <label class="block text-sm font-medium text-gray-700">Name:</label>
+            <p class="mt-1 text-lg font-semibold text-blue-500">{{ auth()->user()->name }}</p>
+        </div>
+        <div class="mt-4">
+            <label class="block text-sm font-medium text-gray-700">Email:</label>
+            <p class="mt-1 text-lg font-semibold text-blue-500">{{ auth()->user()->email }}</p>
+        </div>
+    </div>
+</div>
+            </div>
 <hr />
-<form method="POST" enctype="multipart/form-data" action="">
-    <div>
-        <label class="label">
-            <span class="text-base label-text">Name</span>
-        </label>
-        <input name="name" type="text" value="{{ auth()->user()->name }}" class="w-full input input-bordered" />
-    </div>
-    <div>
-        <label class="label">
-            <span class="text-base label-text">Email</span>
-        </label>
-        <input name="email" type="text" value="{{ auth()->user()->email }}" class="w-full input input-bordered" />
-    </div>
-    <div class="mt-6">
-        <button type="submit" class="btn btn-block">Save Profile</button>
-    </div>
-</form>
+
+   
+
 @endsection
