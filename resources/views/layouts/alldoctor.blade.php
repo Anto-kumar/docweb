@@ -5,8 +5,7 @@
 @section('contents')
 
 <h1 class="text-2xl font-bold text-center"><u> Our All Doctors List :</u></h1>
-
-<div class="row">
+<div class="row" style="background-color: #808090;">
 @foreach($doctor as $doctors)
     <div class="col-md-4">
         <div class="item">

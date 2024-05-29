@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('contents')
 
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.alert').remove();
+        }, 3000);
+    </script>
+@endif
+
 <div style="text-align: center;">
     <table style="border-collapse: collapse; width: 100%; background-color: #f2f2f2; border-radius: 5px;">
         <tr>

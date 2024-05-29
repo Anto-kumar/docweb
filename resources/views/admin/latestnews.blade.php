@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @section('contents')
 
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.alert').remove();
+        }, 3000);
+    </script>
+@endif
+
 <h2 style="color: #FF0000;">Update News</h2>
 <form action="{{url('admin/update_news')}}" method="POST" enctype="multipart/form-data">
     @csrf

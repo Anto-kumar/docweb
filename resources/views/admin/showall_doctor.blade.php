@@ -2,6 +2,19 @@
  
 @section('contents')
 
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.alert').remove();
+        }, 3000);
+    </script>
+@endif
+
+<h1 class="text-2xl font-bold text-center"><u> Our All Doctors List :</u></h1>
+
 <div style="text-align: center;">
     <table style="border-collapse: collapse; width: 100%; background-color: #f2f2f2; border-radius: 5px;">
         <tr style="background-color: skyblue;">

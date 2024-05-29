@@ -4,6 +4,17 @@
 
 @section('contents')
 
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.alert').remove();
+        }, 2000);
+    </script>
+@endif
+
 <div class="page-section" style="background-color: lightblue;">
   <div class="container">
     <h1 class="text-center wow fadeInUp">Make an Appointment</h1>
