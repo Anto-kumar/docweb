@@ -97,7 +97,6 @@
                     <option value="pathology">Pathology</option>
                     <option value="emergency">Emergency</option>
                     <option value="all">All</option>
-                    <
                 </select>
             </div>
             <div class="form-group">

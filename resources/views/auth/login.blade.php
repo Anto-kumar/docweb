@@ -12,8 +12,16 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"></script>
 </head>
  
-<body>
-    <section class="bg-gray-50 dark:bg-gray-900">
+<body >
+    <section class="bg-gray-50 dark:bg-gray-900" style="background-color: lightblue;">
+    <div class="flex justify-center">
+        <div style="margin-top:10px;">
+            <img src="../image/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+        </div>
+        <div class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white">
+           <p><b><u>Doc-Appoint</u></b></p>
+        </div>
+    </div>
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <div class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                 Login
@@ -52,7 +60,7 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5">
-                                    <input name="remember" id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required="">
+                                    <input name="remember" id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>

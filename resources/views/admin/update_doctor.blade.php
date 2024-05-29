@@ -1,5 +1,5 @@
 @extends('layouts.app')
- 
+
 @section('contents')
 <style>
         body {
@@ -52,8 +52,19 @@
             background-color: #45a049;
         }
     </style>
+
             <div>
-            <h1 class="header">Add Doctor Form</h1>
+            @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                    <script>
+                        setTimeout(function(){
+                            document.querySelector('.alert').remove();
+                        }, 3000);
+                    </script>
+                @endif
+            <h1 class="header">Update Doctor Form</h1>
             <div class="container">
        
             <form action="{{url('admin/edit_doctor',$data->id)}}" method="post" enctype="multipart/form-data">
@@ -75,7 +86,19 @@
                     <option value="cardiology">Cardiology</option>
                     <option value="dental">Dental</option>
                     <option value="neurology">Neurology</option>
-                    <option value="orthopaedics">Orthopaedics</option>    
+                    <option value="orthopaedics">Orthopaedics</option>
+                    <option value="paediatrics">Paediatrics</option>
+                    <option value="physiotherapy">Physiotherapy</option>
+                    <option value="psychiatry">Psychiatry</option>
+                    <option value="urology">Urology</option>
+                    <option value="gynaecology">Gynaecology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="ophthalmology">Ophthalmology</option>
+                    <option value="oncology">Oncology</option>
+                    <option value="radiology">Radiology</option>
+                    <option value="pathology">Pathology</option>
+                    <option value="emergency">Emergency</option>
+                    <option value="all">All</option>
                 </select>
             </div>
             <div class="form-group">

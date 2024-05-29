@@ -12,8 +12,16 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js"></script>
 </head>
  
-<body>
-    <section class="bg-gray-50 dark:bg-gray-900">
+<body style="background-color:gray;">
+    <div class="flex justify-center" style="margin-top:10px;">
+    <div style="margin-top:10px;">
+            <img src="../image/logo.jpg" alt="Logo" class="h-12 w-12 rounded-full">
+        </div>
+        <div class="mt-4 text-2xl font-semibold text-gray-900 dark:text-white">
+           <p><b><u>Doc-Appoint</u></b></p>
+        </div>
+    </div>
+    <section class="bg-gray-50 dark:bg-gray-900" style="background-color: lightblue;">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <div class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
                 Register

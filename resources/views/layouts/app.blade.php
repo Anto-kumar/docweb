@@ -58,7 +58,7 @@
                     <div data-dropdown-items class="text-sm text-left absolute top-0 right-0 mt-16 mr-4 bg-white rounded border border-gray-400 shadow" x-show="open" @click.away="open = false">
                         <ul>
                             <li class="px-4 py-3 border-b hover:bg-gray-200"><a href="{{ route('admin/profile') }}">My Profile</a></li>
-                            <li class="px-4 py-3 hover:bg-gray-200"><a href="{{route('logout') }}">Log out</a></li>
+                            <li class="px-4 py-3 hover:bg-gray-200"><a href="{{route('logout') }}" onclick="return confirm('Are you sure to Log Out this Account')">Log out</a></li>
                         </ul>
                     </div>
                 </button>
@@ -117,7 +117,7 @@
                     </div>
                 </a>
 
-                <a href="{{ route('logout') }}">
+                <a href="{{ route('logout') }}" onclick="return confirm('Are you sure to Logout')">
                     <div class="my-4 bg-gray-600 h-[1px]"></div>
                     <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                         <i class="bi bi-box-arrow-in-right"></i>
